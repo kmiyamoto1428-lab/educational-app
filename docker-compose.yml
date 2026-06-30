@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: educational-postgres
+    environment:
+      POSTGRES_DB: educational_app
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
