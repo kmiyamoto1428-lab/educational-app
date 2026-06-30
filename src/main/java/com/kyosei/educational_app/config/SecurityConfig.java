@@ -22,6 +22,7 @@ public class SecurityConfig {
             .frameOptions(frame -> frame.sameOrigin()))
         .authorizeHttpRequests(auth -> auth
             .requestMatchers(
+                "/",
                 "/login",
                 "/register",
                 "/css/**",
