@@ -10,7 +10,4 @@ Docker
 docker compose down
 
 ログインURL
-http://localhost:8080/login
-
-登録画面URL
-http://localhost:8080/register
+http://localhost:8080/
