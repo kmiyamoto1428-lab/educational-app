@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>教材一覧</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <h1>教材一覧</h1>
+
+    <div th:each="lesson : ${lessons}">
+        <h2 th:text="${lesson.title}">教材タイトル</h2>
+        <p th:text="${lesson.description}">教材説明</p>
+        <hr>
+    </div>
+
+    <a href="/home">ホームに戻る</a>
+
+</body>
+</html>
