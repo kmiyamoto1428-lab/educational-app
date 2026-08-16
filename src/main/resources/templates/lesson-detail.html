@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson Detail</title>
+</head>
+<body>
+
+    <h1 th:text="${lesson.title}">Lesson Title</h1>
+
+    <p th:text="${lesson.description}">
+        Lesson Description
+    </p>
+
+    <a th:href="@{/lessons}">Back to Lessons</a>
+
+</body>
+</html>

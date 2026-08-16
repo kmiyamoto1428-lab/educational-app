@@ -18,4 +18,8 @@ public class LessonService {
     public List<Lesson> findAllLessons() {
         return lessonRepository.findAll();
     }
+
+    public Lesson findById(Long id) {
+        return lessonRepository.findById(id).orElse(null);
+    }
 }
