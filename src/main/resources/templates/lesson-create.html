@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a New Lesson</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+    <h1>Create a New Lesson</h1>
+
+    <form th:action="@{/lessons}" method="post">
+
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+        </div>
+
+        <div>
+            <label for="description">Description</label>
+            <textarea id="description" name="description"></textarea>
+        </div>
+
+        <button type="submit">Create</button>
+
+    </form>
+
+    <a th:href="@{/lessons}">Back to Lessons</a>
+
+</body>
+</html>

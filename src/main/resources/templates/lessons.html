@@ -9,6 +9,8 @@
 
     <h1>教材一覧</h1>
 
+    <a th:href="@{/lessons/new}">Create New Lesson</a>
+
     <div th:each="lesson : ${lessons}">
         <h2>
             <a th:href="@{/lessons/{id}(id=${lesson.id})}"
