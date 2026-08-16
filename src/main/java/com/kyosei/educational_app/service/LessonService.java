@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class LessonService {
 
@@ -21,5 +22,9 @@ public class LessonService {
 
     public Lesson findById(Long id) {
         return lessonRepository.findById(id).orElse(null);
+    }
+
+    public Lesson save(Lesson lesson) {
+        return lessonRepository.save(lesson);
     }
 }

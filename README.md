@@ -11,8 +11,6 @@ $env:DB_PORT="5433"
 ➂ Spring Boot
 .\gradlew.bat bootRun
 
-
-
 ★ 停止方法
 ➀ Spring Boot
 Ctrl + C
