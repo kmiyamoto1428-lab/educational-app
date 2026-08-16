@@ -5,6 +5,7 @@ import com.kyosei.educational_app.service.LessonService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -25,5 +26,15 @@ public class LessonController {
         model.addAttribute("lessons", lessons);
 
         return "lessons";
+    }
+
+    @GetMapping("/lessons/{id}")
+    public String lessonDetail(@PathVariable Long id, Model model) {
+
+        Lesson lesson = lessonService.findById(id);
+
+        model.addAttribute("lesson", lesson);
+
+        return "lesson-detail";
     }
 }
