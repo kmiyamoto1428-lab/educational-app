@@ -7,11 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
 
 
 @Controller
@@ -50,11 +47,37 @@ public class LessonController {
     }
 
     @PostMapping("/lessons")
-    public String postMethodName(@ModelAttribute Lesson lesson) {
+    public String createLesson(@ModelAttribute Lesson lesson) {
 
         lessonService.save(lesson);
         
         return "redirect:/lessons";
+    }
+
+    @GetMapping("/lessons/{id}/edit")
+    public String lessonEdit(@PathVariable Long id, Model model) {
+
+        Lesson lesson = lessonService.findById(id);
+
+        model.addAttribute("lesson", lesson);
+
+        return "lesson-edit";
+    }
+
+    @PostMapping("/lessons/{id}/edit")
+    public String updateLesson(@PathVariable Long id, @ModelAttribute Lesson updatedLesson) {
+
+        Lesson existingLesson = lessonService.findById(id);
+
+        if (existingLesson == null) {
+            return "redirect:/lessons";
+        }
+
+        existingLesson.setTitle(updatedLesson.getTitle());
+        existingLesson.setDescription(updatedLesson.getDescription());
+
+        lessonService.save(existingLesson);
+        return "redirect:/lessons/" + id;
     }
     
 }
