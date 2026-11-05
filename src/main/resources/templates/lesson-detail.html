@@ -12,6 +12,12 @@
         Lesson Description
     </p>
 
+    <a th:href="@{/lessons/{id}/edit(id=${lesson.id})}">
+        Edit Lesson
+    </a>
+
+    <br>
+
     <a th:href="@{/lessons}">Back to Lessons</a>
 
 </body>
